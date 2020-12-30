@@ -1,7 +1,7 @@
 // BASE SETUP
 // =============================================================================
-
 require('./db/mongoose');
+const bear = require('./db/CRUD');
 
 // call the packages we need
 var express = require('express');           // call express
@@ -16,8 +16,9 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 3000;        // set our port
 
-// var mongoose   = require('mongoose');
-// mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o'); // connect to our database
+// create data in Database:
+bear.createBear('Moshe2');
+
 
 // ROUTES FOR OUR API
 // =============================================================================
