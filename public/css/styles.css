@@ -1,0 +1,125 @@
+div.a {
+    position: relative;
+    width: 700px;
+    height: 200px;
+}
+div.w {
+    position: absolute;
+    right: 240px;  
+    width: 200px;
+    height: 120px;
+} 
+div.e {
+position: absolute;
+right: 0;
+width: 210px;
+height: 120px;
+} 
+div.show {
+  position: absolute;
+  left: 40;
+  width: 210px;
+  height: 120px;
+}
+h1 {
+    margin-top: -1px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    left: 70px;
+    width: 450px;
+}
+header { border-bottom: 1px; }
+header p { display: inline-block; }
+header button { display: inline-block; }
+
+header a {
+    margin: 20px;
+    color: darkblue;
+    font-weight: bold;
+    position: relative;
+    left: 30px;
+    font-family: "Times New Roman";
+    font-size: 30px;
+}
+
+p1 {color: rgb(10, 68, 23);
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+div.p {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 12px;
+    margin-top:4px;
+    margin-bottom: 4px;
+    border-radius: 15px 50px;
+    background:grey;
+    padding: 1px;
+    width: 190px;
+    height: 50px;
+  }
+
+  div.en {
+    font-family: "Arial Black", Gadget, sans-serif;
+
+    text-align: center;
+    margin-top:4px;
+    margin-bottom: 4px;
+    border-radius: 15px 50px;
+    background: goldenrod;
+    padding: 1px;
+    width: 190px;
+    height: 50px;
+  }
+
+  div.py {
+    color:rgb(230, 11, 11);
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 12px;
+    margin-top:4px;
+    margin-bottom: 4px;
+    border-radius: 15px 50px;
+    /* background:grey; */
+    padding: 1px;
+    width: 200px;
+    height: 50px;
+  }
+
+  .portrait {
+    width: 250px;
+    border-radius: 20%;
+}
+
+div.details {
+  display: inline-flex;
+  /* position: relative; */
+  left: 40px;
+  /* color:#be0505; */
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 18px;
+  margin-top:1px;
+  /* margin-bottom: 4px; */
+  /* border-radius: 15px 50px; */
+  /* background:grey; */
+  /* padding: 1px; */
+  /* width: 200px; */
+  /* height: 50px; */
+  
+}
+
+div.pic {
+  /* width: 100%;
+  height: 10px; */
+  /* height: 50px; */
+  margin: 2rem 2rem 2rem 0;
+  /* background-color: black; */
+  /* display: flex; */
+  /* position: absolute; */
+  /* left: 50px; */
+}
