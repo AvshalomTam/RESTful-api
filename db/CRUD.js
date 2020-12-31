@@ -1,29 +1,21 @@
 // CRUD - Create Read Update Delete
-
 const Order = require('../app/models/order');
 // Create DATA
-const createOrder = (restaurant=1, username='', date='', food='') => {
-    const b = new Order({
-        restaurant,
+const createOrder = (serialnumber=0, username='', date='', telephone='') => {
+    const order = new Order({
+        serialnumber,
         username,
         date,
-        food
+        telephone
     })
     
-    b.save().then(() => {
-        console.log(b)
+    order.save().then(() => {
+        // console.log(order)
     }).catch((error) => {
         console.log('error!', error)
     })
 }
-const fetchByRestaurant = (num) => {
-    const findResult = await orders.find({
-        username: "a1"
-      });
-    console.log(order);
-}
 
 module.exports = {
-    createOrder,
-    fetchByRestaurant
+    createOrder
 }

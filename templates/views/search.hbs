@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    {{>background}}
+</head>
+
+<body>
+    <div class=a>
+        {{>header}}
+
+        <div class=e>
+        <form id=form-send>
+            <header>
+                <div class=en>
+                    <p>Enter Serial Number:</p>
+                </div>
+                <input id="serialnumber" placeholder="Enter Number" autocomplete="off">
+                <button id="search-users">Search Users</button>
+            </header>
+        </form>
+        <div class=py>
+            <p id="mana"></p>
+            <p id="user-1"></p>
+            <p id="user-2"></p>
+            <p id="user-3"></p>
+            <p id="user-4"></p>
+            <p id="user-5"></p>
+        </div>
+    </div>
+     
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>

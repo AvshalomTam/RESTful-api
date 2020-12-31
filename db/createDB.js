@@ -1,16 +1,19 @@
 const orders = require('./CRUD');
+const manot = require('./CRUDmana');
 
-restaurant=1, username='', date='', food=''
+orders.createOrder(15, 'ori', '23.12.2020', '0545681258');
+orders.createOrder(15, 'yonatan', '23.12.2020', '0508411111');
+orders.createOrder(15, 'itzhak', '23.12.2020', '0555555555');
+orders.createOrder(26, 'yogev', '23.12.2020', '0545682544558');
+orders.createOrder(26, 'yonatan', '23.12.2020', '0508419999');
+orders.createOrder(26, 'yaakov', '23.12.2020', '011111111');
+orders.createOrder(26, 'shaul', '23.12.2020', '0808080880808');
+orders.createOrder(157, 'yarden', '23.12.2020', '0545682544558');
+orders.createOrder(157, 'dana', '23.12.2020', '0508419999');
+orders.createOrder(157, 'rotem', '23.12.2020', '011111111');
+orders.createOrder(157, 'miri', '23.12.2020', '0808080880808');
+orders.createOrder(157, 'dalia', '23.12.2020', '0560211111');
 
-orders.createOrder(1, 'a1', '23.12.2020', 'manahama1');
-orders.createOrder(1, 'av1', '23.12.2020', 'mana1');
-orders.createOrder(1, 'avs1', '23.12.2020', 'food1');
-orders.createOrder(2, 'a2', '23.12.2020', 'manahama2');
-orders.createOrder(2, 'av2', '23.12.2020', 'mana2');
-orders.createOrder(2, 'avs2', '23.12.2020', 'food2');
-orders.createOrder(3, 'a3', '23.12.2020', 'manahama3');
-orders.createOrder(3, 'av3', '23.12.2020', 'mana3');
-orders.createOrder(3, 'avs3', '23.12.2020', 'food3');
-orders.createOrder(4, 'a4', '23.12.2020', 'manahama4');
-orders.createOrder(4, 'av4', '23.12.2020', 'mana4');
-orders.createOrder(4, 'avs4', '23.12.2020', 'food4');
+manot.createMana('Pasta', 15, 3);
+manot.createMana('Pizza', 26, 4);
+manot.createMana('Lazania', 157, 5);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    restaurant: {
+    serialnumber: {
         type: Number
     },
     username: {
@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     date: {
         type: String
     },
-    food: {
+    telephone: {
         type: String
     }
 });
