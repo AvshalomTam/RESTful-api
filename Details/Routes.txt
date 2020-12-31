@@ -1,7 +1,0 @@
-Route                   Http vers           Description       
-======================  ==================  ================================
-/api/orders              Get                 Get all the orders.               
-/api/orders              Post                Create a order.
-/api/orders/:order_id    Get                 Get a single order.
-/api/orders/:order_id    Put                 Update a order with new info.
-/api/orders/:order_id    Delete              Delete a order.

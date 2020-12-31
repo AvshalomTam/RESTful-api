@@ -5,16 +5,14 @@ const hbs = require('hbs');
 require('./db/mongoose');
 const Order = require('./app/models/order');
 
-// const orders = require('./db/CRUD');
-
 // call the packages we need
-var express = require('express');           // call express
-var app = express();                        // define our app using express
-//body-parser will let us pull POST content from our HTTP request so that we can do things like create a bear
+var express = require('express');           
+var app = express();                 
 var bodyParser = require('body-parser');  
 
-var port = process.env.PORT || 3000;        // set our port
-// console.log(path.join(__dirname, '../public'))
+// Choose port
+var port = process.env.PORT || 3000;    
+
 // Define paths for Express configuration
 const publicDirectoryPath = path.join(__dirname, './public')
 const viewsPath = path.join(__dirname, './templates/views')
@@ -27,18 +25,15 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
-app.use(bodyParser.urlencoded({ extended: true })); // this will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());
-// orders.fetchByRestaurant()
 
 // ROUTES FOR OUR API
 // =============================================================================
-var router = express.Router();              // get an instance of the express Router
-// REGISTER OUR ROUTES -------------------------------
-// all of our api routes will be prefixed with /api
+var router = express.Router();             
 app.use('/api', router);
 
-// test route to make sure everything is working (accessed at GET http://localhost:3000/)
+// main page (accessed at GET http://localhost:3000/)
 app.get('/', function(req, res) {
     res.render('index');  
 });
@@ -71,5 +66,4 @@ app.get('*', (req, res) => {
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-// require('./db/stamm');
-console.log('Magic happens on port ' + port);
+console.log('Server runs on port ' + port);
