@@ -34,6 +34,9 @@ app.use(bodyParser.json());
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
+// REGISTER OUR ROUTES -------------------------------
+// all of our api routes will be prefixed with /api
+app.use('/api', router);
 
 // test route to make sure everything is working (accessed at GET http://localhost:3000/)
 app.get('/', function(req, res) {
@@ -57,11 +60,16 @@ router.get('/orders/:res', async (req, res) => {
     }
 });
 
-// REGISTER OUR ROUTES -------------------------------
-// all of our api routes will be prefixed with /api
-app.use('/api', router);
+app.get('*', (req, res) => {
+    res.render('404page', {
+        title: '404 page',
+        name: 'Avshalom Tam',
+        error_msg: 'Page not found - Please go back'
+    })
+})
 
 // START THE SERVER
 // =============================================================================
 app.listen(port);
+// require('./db/stamm');
 console.log('Magic happens on port ' + port);
