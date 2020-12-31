@@ -5,6 +5,7 @@ const hbs = require('hbs');
 require('./db/mongoose');
 const Order = require('./app/models/order');
 const Mana = require('./app/models/mana');
+const { checkValidMsg, orderMessage } = require('./utils/fillArray');
 
 // call the packages we need
 var express = require('express');           
@@ -44,18 +45,14 @@ app.get('/search', function(req, res) {
 }); 
 
 app.get('/db', async (req, res) => {
-
     const number = parseInt(req.query.num) 
-
     if (!req.query.num) {
         return res.send({
             error: 'Serial Number wasnt found!'
         })
     }
-
     // here searsh in DB foe serial number
     try {
-        
         const mana = await Mana.findOne({
             serialnumber: number
         })
@@ -68,17 +65,8 @@ app.get('/db', async (req, res) => {
             return res.status(404).send()
         }
 
-        const msg = prepare(mana.name, ...users)
-        console.log(msg);
-        console.log(msg.userFive? 'yes':'empty')
-        const message = {
-            mana: msg.mana,
-            userOne: msg.userOne ? msg.userOne.username : '',
-            userTwo: msg.userTwo ? msg.userTwo.username : '',
-            userThree: msg.userThree ? msg.userThree.username : '',
-            userFour: msg.userFour ? msg.userFour.username : '',
-            userFive: msg.userFive ? msg.userFive.username : ''
-        };
+        const msg = checkValidMsg(mana.name, ...users)
+        const message = orderMessage(msg)
         res.send({msg: message})
         
     } catch (e) {
@@ -86,17 +74,6 @@ app.get('/db', async (req, res) => {
     }
     
 });
-
-const prepare = function (mana='', userOne='' , userTwo='' , userThree='' , userFour='' , userFive='' ) {
-    return {
-        mana: 'The Mana is: ' + mana,
-        userOne,
-        userTwo,
-        userThree,
-        userFour,
-        userFive
-    }
-} 
 
 // More routes
 router.get('/orders/:res', async (req, res) => {
@@ -122,9 +99,6 @@ app.get('*', (req, res) => {
         error_msg: 'Page not found - Please go back'
     })
 })
-
-// require('./db/createDB');
-
 // START THE SERVER
 // =============================================================================
 app.listen(port);

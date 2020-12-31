@@ -1,6 +1,6 @@
 const orders = require('./CRUD');
 const manot = require('./CRUDmana');
-
+// run require('./db/createDB'); from server.js
 orders.createOrder(15, 'ori', '23.12.2020', '0545681258');
 orders.createOrder(15, 'yonatan', '23.12.2020', '0508411111');
 orders.createOrder(15, 'itzhak', '23.12.2020', '0555555555');
