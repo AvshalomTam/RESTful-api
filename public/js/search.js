@@ -8,7 +8,6 @@ const userThree = document.querySelector('#user-3');
 const userFour = document.querySelector('#user-4');
 const userFive = document.querySelector('#user-5');
 
-
 usersForm.addEventListener('click', (e) => {
     e.preventDefault()
     const serialNumber = parseInt(search.value);
@@ -31,5 +30,3 @@ usersForm.addEventListener('click', (e) => {
         })
     })
 });
-
-

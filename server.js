@@ -30,11 +30,8 @@ app.use(express.static(publicDirectoryPath))
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());
 
-// ROUTES FOR OUR API
+// ROUTES
 // =============================================================================
-var router = express.Router();             
-app.use('/api', router);
-
 // main page (accessed at GET http://localhost:3000/)
 app.get('/', function(req, res) {
     res.render('index');  
@@ -56,7 +53,6 @@ app.get('/db', async (req, res) => {
         const mana = await Mana.findOne({
             serialnumber: number
         })
-
         const users = await Order.find({
             serialnumber: number
         })
@@ -69,24 +65,6 @@ app.get('/db', async (req, res) => {
         const message = orderMessage(msg)
         res.send({msg: message})
         
-    } catch (e) {
-        res.status(500).send()
-    }
-    
-});
-
-// More routes
-router.get('/orders/:res', async (req, res) => {
-    const restaurantNum = req.params.res 
-    try {
-        const orders = await Order.find({
-            restaurant: restaurantNum
-        })
-
-        if (!orders) {
-            return res.status(404).send()
-        }
-        res.send(orders)
     } catch (e) {
         res.status(500).send()
     }

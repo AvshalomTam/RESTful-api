@@ -1,4 +1,3 @@
-
 const checkValidMsg = function (mana='', userOne='' , userTwo='' , userThree='' , userFour='' , userFive='' ) {
     return {
         mana: 'The Mana is: ' + mana,

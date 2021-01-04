@@ -17,16 +17,14 @@
                     <p>Enter Serial Number:</p>
                 </div>
                 <input id="serialnumber" placeholder="Enter Number" autocomplete="off">
-                <button id="search-users">Search Users</button>
+                <button id="search-users">Search Orders</button>
             </header>
         </form>
         <div class=py>
-            <p id="mana"></p>
-            <p id="user-1"></p>
-            <p id="user-2"></p>
-            <p id="user-3"></p>
-            <p id="user-4"></p>
-            <p id="user-5"></p>
+            <div class=mana_name>
+                <p id="mana"></p>
+            </div>
+            {{>users}}
         </div>
     </div>
      
