@@ -5,7 +5,6 @@ const hbs = require('hbs');
 require('./db/mongoose');
 const Order = require('./app/models/order');
 const Mana = require('./app/models/mana');
-const { checkValidMsg, orderMessage } = require('./utils/fillArray');
 
 // call the packages we need
 var express = require('express');           
@@ -43,9 +42,11 @@ app.get('/search', function(req, res) {
 
 app.get('/db', async (req, res) => {
     const number = parseInt(req.query.num) 
-    if (!req.query.num) {
+    // check if user inserted serial number
+    if (isNaN(req.query.num)) {
         return res.send({
-            error: 'Serial Number wasnt found!'
+            mana: 'Please insert serial number!',
+            users: []
         })
     }
     // here searsh in DB foe serial number
@@ -58,13 +59,16 @@ app.get('/db', async (req, res) => {
         })
 
         if (!mana || !users) {
-            return res.status(404).send()
+            return res.send({
+                mana: `There is no mana with ${number} as serial number`,
+                users: []
+            })
         }
-
-        const msg = checkValidMsg(mana.name, ...users)
-        const message = orderMessage(msg)
-        res.send({msg: message})
-        
+        // send msg and users to client
+        res.send({
+            mana: mana.name,
+            users
+        })
     } catch (e) {
         res.status(500).send()
     }

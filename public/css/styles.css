@@ -74,7 +74,7 @@ div.p {
     border-radius: 15px 50px;
     background: goldenrod;
     padding: 1px;
-    width: 190px;
+    width: 400px;
     height: 50px;
   }
 
@@ -86,7 +86,7 @@ div.p {
     margin-bottom: 4px;
     border-radius: 15px 50px;
     padding: 1px;
-    width: 200px;
+    width: 400px;
     height: 50px;
   }
 
@@ -98,12 +98,12 @@ div.p {
     margin-bottom: 4px;
     border-radius: 15px 50px;
     padding: 1px;
-    width: 200px;
+    width: 400px;
     height: 50px;
   }
 
   .portrait {
-    width: 250px;
+    width: 400px;
     border-radius: 20%;
 }
 
